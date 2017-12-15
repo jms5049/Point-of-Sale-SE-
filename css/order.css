@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+*{
+  font-family: 'Nanum Gothic', serif;
+}
+body{
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+}
+th, td {
+    /*border: 1px solid black;*/
+}
+table#orderbox{
+  width: 100%;
+  margin: auto;
+  line-height: 2;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+table#orderbox tr:nth-child(even) {
+    background-color: #fff;
+}
+table#orderbox tr:nth-child(odd) {
+   background-color: #e6ffe6;
+}
+table#orderbox th {
+    background-color: #5da2a2;
+    color: white;
+}
+.title{
+  background-color: rgb(244,244,244);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+button{
+  border:none;
+  height:40px;
+  padding:0 2em;
+  cursor:pointer;
+  outline:none;
+  border-radius: 5px;
+  background-color: #96c3c3;
+  color: white;
+  box-shadow: 2px 2px 1px 1px #B4B4B4;
+  font-weight: bold;
+  font-size: 15px;
+}
+button:hover{
+  background-color: #5da2a2;
+  color: white;
+}
+.btn_both{
+  overflow:hidden;
+  clear:both;
+  width:100%;
+  margin-bottom: 10px;
+}
+.btn_both .fl{float:left}
+.btn_both .fr{float:right}
+
+button#detail{
+  height: 30px;
+  margin: 5px 0;
+}

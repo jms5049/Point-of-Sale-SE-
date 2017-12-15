@@ -1,0 +1,121 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+*{
+  font-family: 'Nanum Gothic', serif;
+}
+body{
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+}
+.title{
+  background-color: rgb(244,244,244);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  margin: auto;
+  line-height: 2;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+td, th {
+    border: 1px solid #7d7d7d;
+    text-align: left;
+    padding: 8px;
+}
+/*table tr:nth-child(even) {
+    background-color: #fff;
+}
+table tr:nth-child(odd) {
+   background-color: #e6ffe6;
+}*/
+table th {
+    background-color: #5da2a2;
+    color: white;
+}
+button{
+  border:none;
+  height:40px;
+  padding:0 2em;
+  cursor:pointer;
+  outline:none;
+  border-radius: 5px;
+  background-color: #96c3c3;
+  color: white;
+  box-shadow: 2px 2px 1px 1px #B4B4B4;
+  font-weight: bold;
+  font-size: 15px;
+}
+button:hover{
+  background-color: #5da2a2;
+  color: white;
+}
+.btn_both{
+  overflow:hidden;
+  clear:both;
+  width:100%;
+  margin-bottom: 10px;
+}
+.btn_both .fl{float:left}
+.btn_both .fr{float:right}
+
+#canclePointUseButton{
+  float:right;
+}
+
+#confirmPointUseButton{
+  float:left;
+}
+
+#pointUseButton{
+  /*padding-left: 50%;*/
+  width: 150px;
+  float: right;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px 30px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 60%;
+}
+.modal-content th{
+  width: 300px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

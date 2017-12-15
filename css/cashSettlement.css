@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+*{
+  font-family: 'Nanum Gothic', serif !important;
+}
+html, head, body{
+    margin: 0;
+}
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    font-weight: bold;
+}
+td{
+
+}
+td:nth-child(1){
+    background-color: #444652;
+    color: #f3f3f3;
+    padding: 0.5em 1em;
+    font-weight: bold;
+}
+
+td:nth-child(2){
+    background-color: snow;
+    padding: 0.5em 3em;
+}
+
+#box{
+    background-color: #f3f3f3;
+    width: 50%;
+    height: 500px;
+    padding-top: 100px;
+    margin: 100px auto;
+}
+
+p{
+    text-align: center;
+}
+.buttonAlign{
+    margin: 2em auto;
+    text-align: center;
+}
+
+.buttonAlign > button{
+    /*margin: 0 auto;*/
+    display: table-cell;
+    text-align: center;
+}
+
+button{
+  border:none;
+  height:40px;
+  padding:0 2em;
+  cursor:pointer;
+  outline:none;
+  border-radius: 5px;
+  background-color: #96c3c3;
+  color: white;
+  box-shadow: 2px 2px 1px 1px #B4B4B4;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 0 10px;
+}
+button:hover{
+  background-color: #5da2a2;
+  color: white;
+}

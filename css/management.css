@@ -1,0 +1,96 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+*{
+  font-family: 'Nanum Gothic', serif;
+}
+body{
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+}
+.title{
+  background-color: rgb(244,244,244);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+table, tr, td {
+    text-align: center;
+    color: #d4e7fa;
+}
+table{
+    width: 80%;
+    margin: 0 auto;
+}
+td{
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+button.btn-1{
+  border:none;
+  height:40px;
+  padding:0 2em;
+  cursor:pointer;
+  outline:none;
+  border-radius: 5px;
+  background-color: #96c3c3;
+  color: white;
+  box-shadow: 2px 2px 1px 1px #B4B4B4;
+  font-weight: bold;
+  font-size: 15px;
+}
+button.btn-1:hover{
+  background-color: #5da2a2;
+  color: white;
+}
+
+.content{
+  width: 580px;
+  height: 170px;
+  margin: 10px auto;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-color: #444652;
+}
+button.order{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:0.8em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin: 10px;
+}
+button.order:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button.order:before,button.order:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button.order:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button.order:hover:before,button.order:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/*#cash, #sales{
+    margin: 0.3em;
+}*/
