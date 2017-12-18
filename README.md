@@ -29,3 +29,6 @@ login.php has been created and modified
 
 ###js
 pay.js has been modified
+
+# DEC 18
+Final Version 01
