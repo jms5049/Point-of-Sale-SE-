@@ -1,6 +1,3 @@
-/**
- * Created by eunjeong on 2017-11-23.
- */
 function autoHypen(){
     var card = document.getElementById('card');
     var rHypen = card.value.replace(/-/g, "");
@@ -30,19 +27,7 @@ function calculation() {
 }
 
 
-function cashPurchaseFailure(){
+function PurchaseFailure(){
     alert("결제가 취소되었습니다.");
-
-    document.getElementById("givenPrice").value = 0;
-    document.getElementById("totalPrice").innerHTML ="0";
-    document.getElementById("change").innerHTML = 0;
-
-}
-
-function cardPurchaseFailure(){
-    alert("결제가 취소되었습니다.");
-
-    document.getElementById("card").placeholder="0000-0000-0000-0000";
-    document.getElementById("totalPrice2").innerHTML ="0";
-
+    location.href = "pay.php";
 }

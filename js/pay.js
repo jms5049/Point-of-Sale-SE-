@@ -1,29 +1,29 @@
 var count = 4;
-var i=0;
+var i = 0;
 var goodscount = 0; // 추가된 상품의 갯수
 var totalprice = 0; // 총 금액
 
-function selectAll(target){
-  var item = document.getElementsByName("item");
-  if(target.checked == true){
-    uncheckAll(item);
-  }
-  else{
-    checkAll(item);
-  }
+function selectAll(target) {
+    var item = document.getElementsByName("item");
+    if (target.checked == true) {
+        uncheckAll(item);
+    }
+    else {
+        checkAll(item);
+    }
 
 }
 
-function uncheckAll(item){
-  for(i=0;i<count;i++){
-    item[i].checked = true;
-  }
+function uncheckAll(item) {
+    for (i = 0; i < count; i++) {
+        item[i].checked = true;
+    }
 }
 
-function checkAll(item){
-  for(i=0;i<count;i++){
-    item[i].checked = false;
-  }
+function checkAll(item) {
+    for (i = 0; i < count; i++) {
+        item[i].checked = false;
+    }
 }
 
 function deleteGood() {
@@ -64,6 +64,19 @@ function addgood() {
     var name = selectoption.text;
     var price = select.value;
     var quantity = document.addgoods.quantity.value;
+    // 신분증 확인 품목 메시지 출력
+    var category = selectoption.attributes[1].value;
+    //console.log(category);
+    if (category == 1)
+        alert("미성년자 구매 제한 품목입니다.\n신분증을 확인해주세요.");
+
+    else if (category == 2) {
+        if(quantity > 1){
+            alert("하나만 구매가능한 상품입니다.");
+            return;
+        }
+    }
+
     // row 늘려야하는 경우
     if (goodscount == count) {
         var tbody = document.getElementById('orderTable');
@@ -134,11 +147,6 @@ function addgood() {
     // 총 가격 변경
     document.getElementsByClassName('price')[0].innerHTML = totalprice;
     //document.getElementById('totalprice').innerHTML = totalprice;
-    // 신분증 확인 품목 메시지 출력
-    var category = selectoption.attributes[1].value;
-    //console.log(category);
-    if (category == 1)
-        alert("미성년자 구매 제한 품목입니다.\n신분증을 확인해주세요.");
 
     document.getElementsByClassName('hiddenPrice')[0].onchange();
     //상품 총금액 (최종금액아님!)이 바뀌었다는것을 수동적으로 이벤트 날림
@@ -157,7 +165,7 @@ function submitorder(num) {
         console.log("quantity: " + document.getElementsByName(quantity)[0].value);
     }
     console.log(list.action);
-    if(num == 2){
+    if (num == 2) {
         list.setAttribute('action', 'cardSettlement.php'); // 카드 결제로 변경
     }
     list.submit();
@@ -165,21 +173,21 @@ function submitorder(num) {
 
 
 function openPopUp() {
-  window.open("search.php", "회원검색", "width=570, height=570");
+    window.open("search.php", "회원검색", "width=570, height=570");
 }
 
-function calculate(){
-  var totalPrice = document.getElementsByName("goodstotalprice");
-  console.log(totalPrice);
-  var finalPrice = document.getElementsByName("finalPrice");
-  console.log(totalPrice);
-  var pointUse = document.getElementsByName("pointUse");
-  console.log(pointUse);
-  var price = document.getElementsByClassName("price");
-  finalPrice[0].value = totalPrice[0].value - pointUse[0].value;
-  console.log(finalPrice[0].value);
+function calculate() {
+    var totalPrice = document.getElementsByName("goodstotalprice");
+    console.log(totalPrice);
+    var finalPrice = document.getElementsByName("finalPrice");
+    console.log(totalPrice);
+    var pointUse = document.getElementsByName("pointUse");
+    console.log(pointUse);
+    var price = document.getElementsByClassName("price");
+    finalPrice[0].value = totalPrice[0].value - pointUse[0].value;
+    console.log(finalPrice[0].value);
 
-  price[0].innerHTML = totalPrice[0].value;
-  price[1].innerHTML = pointUse[0].value;
-  price[2].innerHTML = finalPrice[0].value;
+    price[0].innerHTML = totalPrice[0].value;
+    price[1].innerHTML = pointUse[0].value;
+    price[2].innerHTML = finalPrice[0].value;
 }

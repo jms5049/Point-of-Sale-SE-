@@ -27,7 +27,7 @@ $payment = array('', '현금', '카드');
             if (array_key_exists('ordercheck', $_POST)) {
                 $orderid = $_POST['ordercheck'];
                 for($i = 0; $i < count($orderid); $i++){
-                    echo $orderid[$i];
+//                    echo $orderid[$i];
                     $sql2 = "SELECT * from orderlist where oid = ".$orderid[$i];
                     $result2 = mysqli_query($mysql, $sql2);
                     $sql2 = "DELETE from orderlist where oid = ".$orderid[$i];
@@ -38,7 +38,7 @@ $payment = array('', '현금', '카드');
                         $sql_u = "UPDATE balance set cash = cash - ".$row['totalprice']; // 현금 잔고 변경
                         mysqli_query($mysql, $sql_u);
                     }
-                    $sql_u = $sql_u = "UPDATE balance set total = total - ".$row['totalprice']; // 총매출액 변경
+                    $sql_u = "UPDATE balance set total = total - ".$row['totalprice']; // 총매출액 변경
                     mysqli_query($mysql, $sql_u);
 
                     $sql3 = "DELETE from orderdetail where oid = ".$orderid[$i];
@@ -47,10 +47,12 @@ $payment = array('', '현금', '카드');
                     $sql4 = "SELECT * from point where oid = ".$orderid[$i];
                     $result4 = mysqli_query($mysql, $sql4);
                     $arr = mysqli_fetch_array($result4);
+                    $sql4 = "DELETE from point where oid = ".$orderid[$i];
+                    mysqli_query($mysql, $sql4);
                     // 해당 주문에서 point를 사용했으면
                     if($arr[0] != ""){
-                        $sql5 = "UPDATE user set point = point + ".$arr['usepoint']."where id =".$arr['uid'];
-                        echo $sql5;
+                        $sql5 = "UPDATE user set point = point + ".$arr['usepoint']." where id =".$arr['uid'];
+//                        echo $sql5;
                         mysqli_query($mysql, $sql5);
                     }
                 }
@@ -66,7 +68,7 @@ $payment = array('', '현금', '카드');
     </div>
     <div class="btn_both">
         <div class="fl">
-            <button type="button" id="back" onClick="history.back()">뒤로 가기</button>
+            <button type="button" id="back" onClick="location.href ='management.php'">뒤로 가기</button>
         </div>
         <div class="fr">
             <button type="button" id="cancle" onclick="cancleorder()">주문 취소</button>

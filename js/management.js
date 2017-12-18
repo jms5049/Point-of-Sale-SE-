@@ -1,7 +1,3 @@
-/**
- * Created by eunjeong on 2017-11-23.
- */
-
 var currentCash = 100000;
 var salesCash = 5000;
 //  현금 잔고 보여주는 함수

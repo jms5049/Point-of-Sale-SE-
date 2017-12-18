@@ -25,7 +25,7 @@
         <div class="title">
           <h2>관리 페이지</h2>
         </div>
-        <div id="backBtn"><button class="btn-1" onClick="history.back()">뒤로 가기 </button></div>
+        <div id="backBtn"><button class="btn-1" onClick="location.href ='initial.php'">뒤로 가기 </button></div>
         <div class="content">
             <table>
                 <tr>

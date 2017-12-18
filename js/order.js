@@ -9,18 +9,25 @@ function opendetail(thisbutton) {
 // 수량 선택 활성화
 function setNum(name) {
     var q = name + "_q";
-    var numBox = document.getElementsByName(q);
-    var chkBox = document.getElementsByName(name);
+    var c = name + "_c";
+    var numBox = document.getElementById(q);
+    var chkBox = document.getElementById(c);
 
-    if (chkBox[0].checked) {
+    if (chkBox.checked) {
         console.log("checked");
-        numBox[0].disabled = false;
-        numBox[0].value = 1;
+        numBox.disabled = false;
+        numBox.value = 1;
+        if(chkBox.parentNode.parentNode.children[6].innerHTML == "Y"){
+            alert("이미 주문된 상품입니다.");
+            // chkBox.checked = false;
+            numBox.disabled = true;
+            numBox.value = 0;
+        }
     }
     else {
         console.log("unchecked");
-        numBox[0].disabled = true;
-        numBox[0].value = 0;
+        numBox.disabled = true;
+        numBox.value = 0;
     }
 }
 

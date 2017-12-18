@@ -74,6 +74,7 @@ mysqli_query($mysql, "set session character_set_client=utf8;");
                 <td><select name="goodcategory">
                         <option value="0">일반 상품</option>
                         <option value="1">신분증 확인 상품</option>
+                        <option value="2">약품</option>
                     </select>
                 </td>
             </tr>
